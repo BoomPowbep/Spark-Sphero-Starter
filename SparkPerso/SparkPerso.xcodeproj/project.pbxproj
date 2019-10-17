@@ -82,7 +82,11 @@
 		61DAFC14200B9AB3001CB2E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61DAFC13200B9AB3001CB2E2 /* Assets.xcassets */; };
 		61DAFC17200B9AB3001CB2E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61DAFC15200B9AB3001CB2E2 /* LaunchScreen.storyboard */; };
 		61F339AB23250521000967B2 /* SpheroStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F339AA23250521000967B2 /* SpheroStatusViewController.swift */; };
-		B25DCA3E206348505DAC1430 /* Pods_SparkPerso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; };
+		BB12ECAB235895620024D60E /* TP1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECAA235895620024D60E /* TP1ViewController.swift */; };
+		BB12ECAD2358A9BB0024D60E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECAC2358A9BB0024D60E /* Helpers.swift */; };
+		BB12ECAF2358F0630024D60E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECAE2358F0630024D60E /* Utilities.swift */; };
+		BB252CF9234BF5D600BC9F79 /* Pods_SparkPerso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; };
+		BB252CFA234BF5D600BC9F79 /* Pods_SparkPerso.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BB252CFA234BF5D600BC9F79 /* Pods_SparkPerso.framework in Embed Frameworks */,
 				612304B5200BBC1E00F98395 /* VideoPreviewer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -188,6 +193,9 @@
 		61DAFC18200B9AB3001CB2E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61F339AA23250521000967B2 /* SpheroStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpheroStatusViewController.swift; sourceTree = "<group>"; };
 		9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparkPerso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB12ECAA235895620024D60E /* TP1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP1ViewController.swift; sourceTree = "<group>"; };
+		BB12ECAC2358A9BB0024D60E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		BB12ECAE2358F0630024D60E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,8 +210,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB252CF9234BF5D600BC9F79 /* Pods_SparkPerso.framework in Frameworks */,
 				612304B4200BBC1E00F98395 /* VideoPreviewer.framework in Frameworks */,
-				B25DCA3E206348505DAC1430 /* Pods_SparkPerso.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +247,7 @@
 		612304B7200BC74500F98395 /* SparkStarter */ = {
 			isa = PBXGroup;
 			children = (
+				BB12ECA9235895340024D60E /* TP */,
 				612304AB200BABF700F98395 /* HelpersFromSample */,
 				6117015C21F60C64009F47E4 /* IA */,
 				6117015321F5F10F009F47E4 /* Gimbal */,
@@ -472,6 +481,8 @@
 				61DAFC13200B9AB3001CB2E2 /* Assets.xcassets */,
 				61DAFC15200B9AB3001CB2E2 /* LaunchScreen.storyboard */,
 				61DAFC18200B9AB3001CB2E2 /* Info.plist */,
+				BB12ECAC2358A9BB0024D60E /* Helpers.swift */,
+				BB12ECAE2358F0630024D60E /* Utilities.swift */,
 			);
 			path = SparkPerso;
 			sourceTree = "<group>";
@@ -483,6 +494,14 @@
 				43A0CB1DA1DFC20A7F568AB0 /* Pods-SparkPerso.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB12ECA9235895340024D60E /* TP */ = {
+			isa = PBXGroup;
+			children = (
+				BB12ECAA235895620024D60E /* TP1ViewController.swift */,
+			);
+			path = TP;
 			sourceTree = "<group>";
 		};
 		DAF062492152209D4BDB5354 /* Frameworks */ = {
@@ -626,7 +645,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SparkPerso/Pods-SparkPerso-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SparkPerso/Pods-SparkPerso-frameworks.sh",
 				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageDetect/ImageDetect.framework",
 			);
@@ -637,7 +656,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SparkPerso/Pods-SparkPerso-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SparkPerso/Pods-SparkPerso-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -680,6 +699,7 @@
 				61C3D676231BF82F00F98C11 /* BB9EToy.swift in Sources */,
 				61C3D66F231BF82F00F98C11 /* SensorControl.swift in Sources */,
 				61C3D67E231BF82F00F98C11 /* ToyBox.swift in Sources */,
+				BB12ECAF2358F0630024D60E /* Utilities.swift in Sources */,
 				61C3D679231BF82F00F98C11 /* R2D2Toy.swift in Sources */,
 				612304BB200BD77300F98395 /* LocationDelegate.swift in Sources */,
 				61C3D681231BF82F00F98C11 /* CommandOperationV2.swift in Sources */,
@@ -692,9 +712,11 @@
 				61F339AB23250521000967B2 /* SpheroStatusViewController.swift in Sources */,
 				61C3D67B231BF82F00F98C11 /* MiniToy.swift in Sources */,
 				6117016021F60CB4009F47E4 /* UIImage+CVPixelBuffer.swift in Sources */,
+				BB12ECAB235895620024D60E /* TP1ViewController.swift in Sources */,
 				61C3D671231BF82F00F98C11 /* SensorControlV1.swift in Sources */,
 				61C3D682231BF82F00F98C11 /* CommandSequencerV2.swift in Sources */,
 				6184E2E021E8ABE800895FDF /* Movement.swift in Sources */,
+				BB12ECAD2358A9BB0024D60E /* Helpers.swift in Sources */,
 				61C3D697231C170900F98C11 /* SpheroSensorControlViewController.swift in Sources */,
 				612304C0200BE41500F98395 /* MovementLevelOneViewController.swift in Sources */,
 				61C3D69C231C171F00F98C11 /* GraphView.swift in Sources */,
@@ -912,7 +934,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G739VH73FZ;
+				DEVELOPMENT_TEAM = N2G633WG83;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -921,7 +943,7 @@
 				INFOPLIST_FILE = SparkPerso/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sparkperso.alban;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mickaeldebalme.spark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -934,7 +956,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G739VH73FZ;
+				DEVELOPMENT_TEAM = N2G633WG83;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -943,7 +965,7 @@
 				INFOPLIST_FILE = SparkPerso/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sparkperso.alban;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mickaeldebalme.spark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

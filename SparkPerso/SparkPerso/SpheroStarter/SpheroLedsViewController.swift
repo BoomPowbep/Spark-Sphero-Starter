@@ -34,7 +34,6 @@ class SpheroLedsViewController: UIViewController {
                 $0.scrollMatrix(text: displayTxt, color: .blue, speed: 8, loop: .noLoop)
             }
         }
-        
     }
     
     @IBAction func greenClicked(_ sender: Any) {
