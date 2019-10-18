@@ -10,6 +10,7 @@ import Foundation
 
 class MyMove {
     var durationInSec: Double
+    var speed: Double
     enum Direction {
         case front,back,rotateLeft,rotateRight,up,down,translateLeft,translateRight, none
     }
@@ -17,79 +18,80 @@ class MyMove {
     var breakDurationInSec: Double // Pause duration after movement
     var description:String {
         get {
-            return "Move \(direction) during \(durationInSec)s"
+            return "Move \(direction) during \(durationInSec)s at speed \(speed)"
         }
     }
     
-    init(duration:Double, direction:Direction, breakDuration:Double) {
+    init(duration:Double, speed:Double, direction:Direction, breakDuration:Double) {
         self.durationInSec = duration
+        self.speed = speed
         self.direction = direction
         self.breakDurationInSec = breakDuration
     }
 }
 
 class ForwardMove:MyMove {
-     init(duration:Double, breakDuration:Double) {
-        super.init(duration:duration, direction:.front, breakDuration:breakDuration)
+     init(duration:Double, speed:Double, breakDuration:Double) {
+        super.init(duration:duration, speed: speed, direction:.front, breakDuration:breakDuration)
     }
 }
 
 class BackwardsMove:MyMove {
-     init(duration:Double, breakDuration:Double) {
-        super.init(duration:duration, direction:.back, breakDuration:breakDuration)
+     init(duration:Double, speed:Double, breakDuration:Double) {
+        super.init(duration:duration, speed: speed, direction:.back, breakDuration:breakDuration)
     }
 }
 
 class RightRotationMove:MyMove {
-     init(duration:Double, breakDuration:Double) {
-        super.init(duration:duration, direction:.rotateRight, breakDuration:breakDuration)
+     init(duration:Double, speed:Double, breakDuration:Double) {
+        super.init(duration:duration, speed: speed, direction:.rotateRight, breakDuration:breakDuration)
     }
 }
 
 class RightRotation90Move:MyMove {
-     init(breakDuration:Double) {
-        super.init(duration:7, direction:.rotateRight, breakDuration:breakDuration)
+     init(speed:Double, breakDuration:Double) {
+        super.init(duration:7, speed: speed, direction:.rotateRight, breakDuration:breakDuration)
     }
 }
 
 class LeftRotationMove:MyMove {
-     init(duration:Double, breakDuration:Double) {
-        super.init(duration:duration, direction:.rotateLeft, breakDuration:breakDuration)
+     init(duration:Double, speed:Double, breakDuration:Double) {
+        super.init(duration:duration, speed: speed, direction:.rotateLeft, breakDuration:breakDuration)
     }
 }
 
 class LeftRotation90Move:MyMove {
-     init(breakDuration:Double) {
-        super.init(duration:7, direction:.rotateLeft, breakDuration:breakDuration)
+     init(speed:Double, breakDuration:Double) {
+        super.init(duration:7, speed: speed, direction:.rotateLeft, breakDuration:breakDuration)
     }
 }
 
 class RightTranslationMove:MyMove {
-     init(duration:Double, breakDuration:Double) {
-        super.init(duration:duration, direction:.translateRight, breakDuration:breakDuration)
+     init(duration:Double, speed:Double, breakDuration:Double) {
+        super.init(duration:duration, speed: speed, direction:.translateRight, breakDuration:breakDuration)
     }
 }
 
 class LeftTranslationMove:MyMove {
-     init(duration:Double, breakDuration:Double) {
-        super.init(duration:duration, direction:.translateLeft, breakDuration:breakDuration)
+     init(duration:Double, speed:Double, breakDuration:Double) {
+        super.init(duration:duration, speed: speed, direction:.translateLeft, breakDuration:breakDuration)
     }
 }
 
 class UpMove:MyMove {
-     init(duration:Double, breakDuration:Double) {
-        super.init(duration:duration, direction:.up, breakDuration:breakDuration)
+     init(duration:Double, speed:Double, breakDuration:Double) {
+        super.init(duration:duration, speed: speed, direction:.up, breakDuration:breakDuration)
     }
 }
 
 class DownMove:MyMove {
-     init(duration:Double, breakDuration:Double) {
-        super.init(duration:duration, direction:.down, breakDuration:breakDuration)
+    init(duration:Double, speed:Double, breakDuration:Double) {
+        super.init(duration:duration, speed: speed, direction:.down, breakDuration:breakDuration)
     }
 }
 
 class Stop:MyMove {
     init() {
-        super.init(duration:1, direction:.none, breakDuration:0.0)
+        super.init(duration:1, speed: 0, direction:.none, breakDuration:0.0)
     }
 }

@@ -70,7 +70,7 @@ class TP1ViewController: UIViewController {
     func iterateSequence() {
         if(self.mSequenceRunning) {
             // Move drone
-            move(direction: mSequence[mSequenceIndex].direction)
+            move(move: mSequence[mSequenceIndex])
             log(textView: logsTextView, message: "[DOING] " + self.mSequence[self.mSequenceIndex].description)
             
             delay(mSequence[mSequenceIndex].durationInSec) {
@@ -107,6 +107,8 @@ class TP1ViewController: UIViewController {
         self.mSequenceRunning = false
         self.mSequenceIndex = 0
         startButton.isEnabled = true
+        displaySequenceButton.isEnabled = true
+        clearSequenceButton.isEnabled = true
     }
     
     func sequenceDescription() -> String {
@@ -120,26 +122,26 @@ class TP1ViewController: UIViewController {
     
     // MARK: - Drone Movement
     
-    func move(direction:MyMove.Direction) {
+    func move(move:MyMove) {
         if let mySpark = DJISDKManager.product() as? DJIAircraft {
             stop() // IMPORTANT: ERASE ALL VALUES BEFORE ASSIGNING NEW MOVE
-            switch(direction) {
+            switch(move.direction) {
             case .front :
-                mySpark.mobileRemoteController?.rightStickVertical = displacement
+                mySpark.mobileRemoteController?.rightStickVertical = Float(move.speed)
             case .back:
-                mySpark.mobileRemoteController?.rightStickVertical = -displacement
+                mySpark.mobileRemoteController?.rightStickVertical = Float(-move.speed)
             case .rotateLeft:
-                mySpark.mobileRemoteController?.leftStickHorizontal = displacement
+                mySpark.mobileRemoteController?.leftStickHorizontal = Float(-move.speed)
             case .rotateRight:
-                mySpark.mobileRemoteController?.leftStickHorizontal = -displacement
+                mySpark.mobileRemoteController?.leftStickHorizontal = Float(move.speed)
             case .up:
-                mySpark.mobileRemoteController?.leftStickVertical = displacement
+                mySpark.mobileRemoteController?.leftStickVertical = Float(move.speed)
             case .down:
-                mySpark.mobileRemoteController?.leftStickVertical = -displacement
+                mySpark.mobileRemoteController?.leftStickVertical = Float(-move.speed)
             case .translateLeft:
-                mySpark.mobileRemoteController?.rightStickHorizontal = displacement
+                mySpark.mobileRemoteController?.rightStickHorizontal = Float(-move.speed)
             case .translateRight:
-                mySpark.mobileRemoteController?.rightStickHorizontal = displacement
+                mySpark.mobileRemoteController?.rightStickHorizontal = Float(move.speed)
             case .none:
                 stop()
             }
@@ -198,17 +200,22 @@ class TP1ViewController: UIViewController {
     }
     
     @IBAction func moveFrontButtonClicked(_ sender: Any) {
-        mSequence.append(ForwardMove(duration: 1, breakDuration: 1))
-//        startButton.isEnabled = true
+        self.askForDurationAndSpeed { (speed, duration) in
+            self.mSequence.append(ForwardMove(duration: duration, speed:speed, breakDuration: 1))
+        }
     }
     
     @IBAction func rotateLeftButtonClicked(_ sender: Any) {
-        mSequence.append(LeftRotation90Move(breakDuration: 1))
-//        startButton.isEnabled = true
+        self.askForDurationAndSpeed { (speed, duration) in
+            self.mSequence.append(LeftRotationMove(duration: 3, speed:speed, breakDuration: 1))
+        }
+        
     }
     
     @IBAction func rotateRightButtonClicked(_ sender: Any) {
-        mSequence.append(RightRotation90Move(breakDuration: 1))
-//        startButton.isEnabled = true
+        self.askForDurationAndSpeed { (speed, duration) in
+            self.mSequence.append(RightRotationMove(duration: 3, speed:speed, breakDuration: 1))
+        }
+        
     }
 }
