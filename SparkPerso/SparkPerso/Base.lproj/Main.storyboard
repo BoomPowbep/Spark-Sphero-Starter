@@ -938,6 +938,7 @@ Current Heading: 0</string>
                     <navigationItem key="navigationItem" id="PhX-vI-fF2"/>
                     <connections>
                         <outlet property="logsTextView" destination="WUn-lV-2dV" id="X8t-Yr-VOh"/>
+                        <outlet property="startButton" destination="wHn-DP-Yw7" id="ssX-RG-uN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Fe-51-KIX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

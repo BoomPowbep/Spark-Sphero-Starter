@@ -8,29 +8,10 @@
 
 import UIKit
 import DJISDK
-import AVKit
 
 class TP1ViewController: UIViewController {
     
-    struct MyMove{
-        var durationInSec: Double
-        enum Direction {
-            case front,back,rotateLeft,rotateRight,up,down,translateLeft,translateRight
-        }
-        var direction:Direction
-        var breakDurationInSec: Double // Pause duration after movement
-        var description:String {
-            get {
-                return "Move \(direction) during \(durationInSec)s"
-            }
-        }
-    }
-    
-    private enum Sound {
-        case AAOUUUU, OUUUU
-    }
-    
-    private var audioPlayer: AVAudioPlayer?
+    private var soundManager:SoundManager = SoundManager()
     
     private var mSequence:[MyMove] = []
     private var mSequenceIndex:Int = 0
@@ -39,22 +20,17 @@ class TP1ViewController: UIViewController {
     
     @IBOutlet weak var logsTextView: UITextView!
     
+    @IBOutlet weak var startButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Init sequence elements
-        let forward = MyMove(durationInSec: 1, direction: .front, breakDurationInSec: 1)
-        let backwards = MyMove(durationInSec: 1, direction: .back, breakDurationInSec: 1)
-        let rightYaw = MyMove(durationInSec: 10, direction: .rotateRight, breakDurationInSec: 1)
-        let leftYaw = MyMove(durationInSec: 1, direction: .rotateLeft, breakDurationInSec: 1)
-        let rightRoll = MyMove(durationInSec: 1, direction: .translateRight, breakDurationInSec: 1)
-        let leftRoll = MyMove(durationInSec: 1, direction: .translateLeft, breakDurationInSec: 1)
-        let up = MyMove(durationInSec: 1, direction: .up, breakDurationInSec: 1)
-        let down = MyMove(durationInSec: 1, direction: .down, breakDurationInSec: 1)
-        
         // Init sequence array - Directions test sequence
-//        mSequence = [forward, backwards, rightYaw, leftYaw, rightRoll, leftRoll, up, down]
-        mSequence = [rightYaw]
+        //        mSequence = [forward, backwards, rightYaw, leftYaw, rightRoll, leftRoll, up, down]
+        mSequence = [
+            RightRotation90Move(breakDuration: 1),
+            LeftRotation90Move(breakDuration: 1)
+        ]
         
         // Init sequence array - Square sequence
         //        mSequence = [forward, rightYaw, forward, rightYaw, forward, rightYaw, forward, rightYaw]
@@ -65,6 +41,7 @@ class TP1ViewController: UIViewController {
     func startSequence() {
         if(mSequence.count > 0) {
             mSequenceRunning = true
+            startButton.isEnabled = false
             iterateSequence()
         }
     }
@@ -103,6 +80,7 @@ class TP1ViewController: UIViewController {
         log(textView: self.logsTextView, message: "[END OF SEQUENCE]")
         self.mSequenceRunning = false
         self.mSequenceIndex = 0
+        startButton.isEnabled = true
     }
     
     // MARK: - Drone Movement
@@ -126,6 +104,8 @@ class TP1ViewController: UIViewController {
                 mySpark.mobileRemoteController?.rightStickHorizontal = displacement
             case .translateRight:
                 mySpark.mobileRemoteController?.rightStickHorizontal = displacement
+            case .none:
+                stop()
             }
         }
     }
@@ -136,21 +116,6 @@ class TP1ViewController: UIViewController {
             mySpark.mobileRemoteController?.leftStickHorizontal = 0.0
             mySpark.mobileRemoteController?.rightStickHorizontal = 0.0
             mySpark.mobileRemoteController?.rightStickVertical = 0.0
-        }
-    }
-    
-    // MARK: - Sound
-    
-    private func playSound(sound:Sound){
-        
-        let path  = Bundle.main.path(forResource: (sound == .OUUUU) ? "OUUUU.mp3" : "AAOUUUU.mp3", ofType: nil)!
-        let url = URL(fileURLWithPath: path)
-        
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
-        } catch {
-            log(textView: logsTextView, message: "couldn't load the audio file")
         }
     }
     
@@ -168,7 +133,7 @@ class TP1ViewController: UIViewController {
             startSequence()
         }
         
-        playSound(sound: .OUUUU)
+        soundManager.playSound(sound: SoundManager.Sound.OUUUU)
     }
     
     @IBAction func stopButtonClicked(_ sender: Any) {
@@ -178,6 +143,6 @@ class TP1ViewController: UIViewController {
         mSequenceRunning = false
         stop()
         
-        playSound(sound: .AAOUUUU)
+        soundManager.playSound(sound: SoundManager.Sound.AAOUUUU)
     }
 }

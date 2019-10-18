@@ -87,6 +87,8 @@
 		BB12ECAF2358F0630024D60E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECAE2358F0630024D60E /* Utilities.swift */; };
 		BB12ECB32359A4440024D60E /* AAOUUUU.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB12ECB12359A4440024D60E /* AAOUUUU.mp3 */; };
 		BB12ECB42359A4440024D60E /* OUUUU.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB12ECB22359A4440024D60E /* OUUUU.mp3 */; };
+		BB12ECB72359AF450024D60E /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECB62359AF450024D60E /* SoundManager.swift */; };
+		BB12ECB92359B1270024D60E /* MyMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECB82359B1270024D60E /* MyMove.swift */; };
 		BB252CF9234BF5D600BC9F79 /* Pods_SparkPerso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; };
 		BB252CFA234BF5D600BC9F79 /* Pods_SparkPerso.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -200,6 +202,8 @@
 		BB12ECAE2358F0630024D60E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		BB12ECB12359A4440024D60E /* AAOUUUU.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AAOUUUU.mp3; sourceTree = "<group>"; };
 		BB12ECB22359A4440024D60E /* OUUUU.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OUUUU.mp3; sourceTree = "<group>"; };
+		BB12ECB62359AF450024D60E /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		BB12ECB82359B1270024D60E /* MyMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMove.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +492,7 @@
 				61DAFC18200B9AB3001CB2E2 /* Info.plist */,
 				BB12ECAC2358A9BB0024D60E /* Helpers.swift */,
 				BB12ECAE2358F0630024D60E /* Utilities.swift */,
+				BB12ECB62359AF450024D60E /* SoundManager.swift */,
 			);
 			path = SparkPerso;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				BB12ECAA235895620024D60E /* TP1ViewController.swift */,
+				BB12ECB82359B1270024D60E /* MyMove.swift */,
 			);
 			path = TP;
 			sourceTree = "<group>";
@@ -711,6 +717,7 @@
 				6184E2E521E8AFEB00895FDF /* AutoMoveViewController.swift in Sources */,
 				61C3D673231BF82F00F98C11 /* SpheroV1ToyCore.swift in Sources */,
 				61C3D689231BF82F00F98C11 /* PowerStateResponse.swift in Sources */,
+				BB12ECB92359B1270024D60E /* MyMove.swift in Sources */,
 				61C3D66C231BF82F00F98C11 /* SharedToyBox.swift in Sources */,
 				61C3D676231BF82F00F98C11 /* BB9EToy.swift in Sources */,
 				61C3D66F231BF82F00F98C11 /* SensorControl.swift in Sources */,
@@ -727,6 +734,7 @@
 				61C3D68C231BF82F00F98C11 /* CommandV1Sequencer.swift in Sources */,
 				61F339AB23250521000967B2 /* SpheroStatusViewController.swift in Sources */,
 				61C3D67B231BF82F00F98C11 /* MiniToy.swift in Sources */,
+				BB12ECB72359AF450024D60E /* SoundManager.swift in Sources */,
 				6117016021F60CB4009F47E4 /* UIImage+CVPixelBuffer.swift in Sources */,
 				BB12ECAB235895620024D60E /* TP1ViewController.swift in Sources */,
 				61C3D671231BF82F00F98C11 /* SensorControlV1.swift in Sources */,
