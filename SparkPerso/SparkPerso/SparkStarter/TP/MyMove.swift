@@ -48,7 +48,7 @@ class RightRotationMove:MyMove {
 
 class RightRotation90Move:MyMove {
      init(breakDuration:Double) {
-        super.init(duration:10, direction:.rotateRight, breakDuration:breakDuration)
+        super.init(duration:7, direction:.rotateRight, breakDuration:breakDuration)
     }
 }
 
@@ -60,7 +60,7 @@ class LeftRotationMove:MyMove {
 
 class LeftRotation90Move:MyMove {
      init(breakDuration:Double) {
-        super.init(duration:10, direction:.rotateLeft, breakDuration:breakDuration)
+        super.init(duration:7, direction:.rotateLeft, breakDuration:breakDuration)
     }
 }
 
@@ -85,5 +85,11 @@ class UpMove:MyMove {
 class DownMove:MyMove {
      init(duration:Double, breakDuration:Double) {
         super.init(duration:duration, direction:.down, breakDuration:breakDuration)
+    }
+}
+
+class Stop:MyMove {
+    init() {
+        super.init(duration:1, direction:.none, breakDuration:0.0)
     }
 }

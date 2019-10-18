@@ -89,6 +89,7 @@
 		BB12ECB42359A4440024D60E /* OUUUU.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB12ECB22359A4440024D60E /* OUUUU.mp3 */; };
 		BB12ECB72359AF450024D60E /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECB62359AF450024D60E /* SoundManager.swift */; };
 		BB12ECB92359B1270024D60E /* MyMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECB82359B1270024D60E /* MyMove.swift */; };
+		BB12ECBB2359B7540024D60E /* GenericMovementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECBA2359B7540024D60E /* GenericMovementManager.swift */; };
 		BB252CF9234BF5D600BC9F79 /* Pods_SparkPerso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; };
 		BB252CFA234BF5D600BC9F79 /* Pods_SparkPerso.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -204,6 +205,7 @@
 		BB12ECB22359A4440024D60E /* OUUUU.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OUUUU.mp3; sourceTree = "<group>"; };
 		BB12ECB62359AF450024D60E /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		BB12ECB82359B1270024D60E /* MyMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMove.swift; sourceTree = "<group>"; };
+		BB12ECBA2359B7540024D60E /* GenericMovementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMovementManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +513,7 @@
 			children = (
 				BB12ECAA235895620024D60E /* TP1ViewController.swift */,
 				BB12ECB82359B1270024D60E /* MyMove.swift */,
+				BB12ECBA2359B7540024D60E /* GenericMovementManager.swift */,
 			);
 			path = TP;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				61C3D685231BF82F00F98C11 /* ShouldActionCompleteResponse.swift in Sources */,
 				6117056921F75E4D009F47E4 /* Spark.swift in Sources */,
 				6184E2DB21E8ABB300895FDF /* CGPoints+Extensions.swift in Sources */,
+				BB12ECBB2359B7540024D60E /* GenericMovementManager.swift in Sources */,
 				61C3D693231BFE6900F98C11 /* SpheroDirectionViewController.swift in Sources */,
 				612304AA200BABF200F98395 /* ProductCommunicationManager.swift in Sources */,
 				61C3D691231BFD5F00F98C11 /* SpheroAimingViewController.swift in Sources */,
