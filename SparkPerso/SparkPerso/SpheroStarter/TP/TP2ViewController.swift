@@ -109,15 +109,11 @@ class TP2ViewController: UIViewController {
     func move(move:MyMoveSphero) {
         
             stop() // IMPORTANT: ERASE ALL VALUES BEFORE ASSIGNING NEW MOVE
-            switch(move.heading) {
-            case 90 :
-                _ = SharedToyBox.instance.bolts.map{ $0.roll(heading: move.heading, speed: move.speed) }
-            case 180:
-                _ = SharedToyBox.instance.bolts.map{ $0.roll(heading: move.heading, speed: move.speed) }
-            case 0:
-                _ = SharedToyBox.instance.bolts.map{ $0.roll(heading: move.heading, speed: move.speed) }
-            default:
-                _ = SharedToyBox.instance.bolts.map{ $0.roll(heading: 0, speed: 0) }
+        
+            _ = SharedToyBox.instance.bolts.map{ $0.roll(heading: move.heading, speed: move.speed)}
+        
+        delay(move.durationInSec) {
+            _ = SharedToyBox.instance.bolts.map{ $0.stopRoll(heading: move.heading) }
         }
         
     }
@@ -176,16 +172,12 @@ class TP2ViewController: UIViewController {
     
     
     @IBAction func onRotateLeftButtonClick(_ sender: Any) {
-        self.askForDurationSpeedAndHeading { (speed, duration, heading) in
-            self.mSequence.append(SpheroMove(duration: duration, speed: speed, heading:heading))
-        }
+        self.mSequence.append(SpheroMove(duration: 0, speed: 0, heading:90))
     }
     
     
     @IBAction func onRotateRightButtonClick(_ sender: Any) {
-        self.askForDurationSpeedAndHeading { (speed, duration, heading) in
-            self.mSequence.append(SpheroMove(duration: duration, speed: speed, heading:heading))
-        }
+        self.mSequence.append(SpheroMove(duration: 0, speed: 0, heading:270))
     }
     
 }
