@@ -51,34 +51,34 @@ class SpheroDirectionViewController: UIViewController {
     
     @IBAction func headingValueChanged(_ sender: UISlider) {
         currentHeading = Double(sender.value)
-        SharedToyBox.instance.bolts.map{ $0.stopRoll(heading: currentHeading) }
+        _ = SharedToyBox.instance.bolts.map{ $0.stopRoll(heading: currentHeading) }
         //SharedToyBox.instance.bolt?.stopRoll(heading: currentHeading)
     }
     
     @IBAction func frontClicked(_ sender: Any) {
-        SharedToyBox.instance.bolts.map{ $0.roll(heading: currentHeading, speed: currentSpeed) }
+        _ = SharedToyBox.instance.bolts.map{ $0.roll(heading: currentHeading, speed: currentSpeed) }
 //        SharedToyBox.instance.bolt?.roll(heading: currentHeading, speed: currentSpeed)
     }
     
     @IBAction func leftClicked(_ sender: Any) {
         currentHeading += 30.0
-        SharedToyBox.instance.bolts.map{ $0.roll(heading: currentHeading, speed: currentSpeed) }
+        _ = SharedToyBox.instance.bolts.map{ $0.roll(heading: currentHeading, speed: currentSpeed) }
 //        SharedToyBox.instance.bolt?.roll(heading: currentHeading, speed: currentSpeed)
     }
     
     @IBAction func rightClicked(_ sender: Any) {
         currentHeading -= 30.0
-        SharedToyBox.instance.bolts.map{ $0.roll(heading: currentHeading, speed: currentSpeed) }
+        _ = SharedToyBox.instance.bolts.map{ $0.roll(heading: currentHeading, speed: currentSpeed) }
 //        SharedToyBox.instance.bolt?.roll(heading: currentHeading, speed: currentSpeed)
     }
     
     @IBAction func backClicked(_ sender: Any) {
-        SharedToyBox.instance.bolts.map{ $0.roll(heading: currentHeading, speed: currentHeading, rollType: .roll, direction: .reverse) }
+        _ = SharedToyBox.instance.bolts.map{ $0.roll(heading: currentHeading, speed: currentHeading, rollType: .roll, direction: .reverse) }
 //         SharedToyBox.instance.bolt?.roll(heading: currentHeading, speed: currentHeading, rollType: .roll, direction: .reverse)
     }
     
     @IBAction func stopClicked(_ sender: Any) {
-        SharedToyBox.instance.bolts.map{ $0.stopRoll(heading: currentHeading) }
+        _ = SharedToyBox.instance.bolts.map{ $0.stopRoll(heading: currentHeading) }
 //        SharedToyBox.instance.bolt?.stopRoll(heading: currentHeading)
     }
     
