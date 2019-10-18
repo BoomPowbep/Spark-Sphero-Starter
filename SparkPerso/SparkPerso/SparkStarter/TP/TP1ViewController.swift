@@ -8,6 +8,7 @@
 
 import UIKit
 import DJISDK
+import AVKit
 
 class TP1ViewController: UIViewController {
     
@@ -17,13 +18,19 @@ class TP1ViewController: UIViewController {
             case front,back,rotateLeft,rotateRight,up,down,translateLeft,translateRight
         }
         var direction:Direction
-        var breakDurationInSec: Double
+        var breakDurationInSec: Double // Pause duration after movement
         var description:String {
             get {
                 return "Move \(direction) during \(durationInSec)s"
             }
         }
     }
+    
+    private enum Sound {
+        case AAOUUUU, OUUUU
+    }
+    
+    private var audioPlayer: AVAudioPlayer?
     
     private var mSequence:[MyMove] = []
     private var mSequenceIndex:Int = 0
@@ -38,7 +45,7 @@ class TP1ViewController: UIViewController {
         // Init sequence elements
         let forward = MyMove(durationInSec: 1, direction: .front, breakDurationInSec: 1)
         let backwards = MyMove(durationInSec: 1, direction: .back, breakDurationInSec: 1)
-        let rightYaw = MyMove(durationInSec: 1, direction: .rotateRight, breakDurationInSec: 1)
+        let rightYaw = MyMove(durationInSec: 10, direction: .rotateRight, breakDurationInSec: 1)
         let leftYaw = MyMove(durationInSec: 1, direction: .rotateLeft, breakDurationInSec: 1)
         let rightRoll = MyMove(durationInSec: 1, direction: .translateRight, breakDurationInSec: 1)
         let leftRoll = MyMove(durationInSec: 1, direction: .translateLeft, breakDurationInSec: 1)
@@ -46,11 +53,14 @@ class TP1ViewController: UIViewController {
         let down = MyMove(durationInSec: 1, direction: .down, breakDurationInSec: 1)
         
         // Init sequence array - Directions test sequence
-        mSequence = [forward, backwards, rightYaw, leftYaw, rightRoll, leftRoll, up, down]
+//        mSequence = [forward, backwards, rightYaw, leftYaw, rightRoll, leftRoll, up, down]
+        mSequence = [rightYaw]
         
         // Init sequence array - Square sequence
-//        mSequence = [forward, rightYaw, forward, rightYaw, forward, rightYaw, forward, rightYaw]
+        //        mSequence = [forward, rightYaw, forward, rightYaw, forward, rightYaw, forward, rightYaw]
     }
+    
+    // MARK: - Sequencer
     
     func startSequence() {
         if(mSequence.count > 0) {
@@ -89,6 +99,14 @@ class TP1ViewController: UIViewController {
         }
     }
     
+    func resetSequence() {
+        log(textView: self.logsTextView, message: "[END OF SEQUENCE]")
+        self.mSequenceRunning = false
+        self.mSequenceIndex = 0
+    }
+    
+    // MARK: - Drone Movement
+    
     func move(direction:MyMove.Direction) {
         if let mySpark = DJISDKManager.product() as? DJIAircraft {
             switch(direction) {
@@ -112,12 +130,6 @@ class TP1ViewController: UIViewController {
         }
     }
     
-    func resetSequence() {
-        log(textView: self.logsTextView, message: "[END OF SEQUENCE]")
-        self.mSequenceRunning = false
-        self.mSequenceIndex = 0
-    }
-    
     func stop() {
         if let mySpark = DJISDKManager.product() as? DJIAircraft {
             mySpark.mobileRemoteController?.leftStickVertical = 0.0
@@ -127,27 +139,45 @@ class TP1ViewController: UIViewController {
         }
     }
     
+    // MARK: - Sound
+    
+    private func playSound(sound:Sound){
+        
+        let path  = Bundle.main.path(forResource: (sound == .OUUUU) ? "OUUUU.mp3" : "AAOUUUU.mp3", ofType: nil)!
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        } catch {
+            log(textView: logsTextView, message: "couldn't load the audio file")
+        }
+    }
+    
+    // MARK: - Buttons handlers
+    
     @IBAction func startButtonClicked(_ sender: Any) {
         
         log(textView: logsTextView, message: "\n[->] START button clicked\n")
-        startSequence()
+        
+        // Check if sequence is already running
+        if(mSequenceRunning) {
+            log(textView: logsTextView, message: "\n[WARNING] Sequence already running! Cancelled.\n")
+        }
+        else {
+            startSequence()
+        }
+        
+        playSound(sound: .OUUUU)
     }
     
     @IBAction func stopButtonClicked(_ sender: Any) {
         
         log(textView: logsTextView, message: "\n[X] STOP button clicked")
+        
         mSequenceRunning = false
         stop()
+        
+        playSound(sound: .AAOUUUU)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

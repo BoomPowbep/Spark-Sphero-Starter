@@ -85,6 +85,8 @@
 		BB12ECAB235895620024D60E /* TP1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECAA235895620024D60E /* TP1ViewController.swift */; };
 		BB12ECAD2358A9BB0024D60E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECAC2358A9BB0024D60E /* Helpers.swift */; };
 		BB12ECAF2358F0630024D60E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECAE2358F0630024D60E /* Utilities.swift */; };
+		BB12ECB32359A4440024D60E /* AAOUUUU.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB12ECB12359A4440024D60E /* AAOUUUU.mp3 */; };
+		BB12ECB42359A4440024D60E /* OUUUU.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB12ECB22359A4440024D60E /* OUUUU.mp3 */; };
 		BB252CF9234BF5D600BC9F79 /* Pods_SparkPerso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; };
 		BB252CFA234BF5D600BC9F79 /* Pods_SparkPerso.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -196,6 +198,8 @@
 		BB12ECAA235895620024D60E /* TP1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP1ViewController.swift; sourceTree = "<group>"; };
 		BB12ECAC2358A9BB0024D60E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		BB12ECAE2358F0630024D60E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		BB12ECB12359A4440024D60E /* AAOUUUU.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AAOUUUU.mp3; sourceTree = "<group>"; };
+		BB12ECB22359A4440024D60E /* OUUUU.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OUUUU.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -472,6 +476,7 @@
 		61DAFC0B200B9AB3001CB2E2 /* SparkPerso */ = {
 			isa = PBXGroup;
 			children = (
+				BB12ECB02359A4220024D60E /* Sounds */,
 				61DAFC0E200B9AB3001CB2E2 /* ConnectionViewController.swift */,
 				612304B7200BC74500F98395 /* SparkStarter */,
 				61C3D5E9231BF7E300F98C11 /* SpheroStarter */,
@@ -502,6 +507,15 @@
 				BB12ECAA235895620024D60E /* TP1ViewController.swift */,
 			);
 			path = TP;
+			sourceTree = "<group>";
+		};
+		BB12ECB02359A4220024D60E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BB12ECB12359A4440024D60E /* AAOUUUU.mp3 */,
+				BB12ECB22359A4440024D60E /* OUUUU.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		DAF062492152209D4BDB5354 /* Frameworks */ = {
@@ -611,9 +625,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB12ECB42359A4440024D60E /* OUUUU.mp3 in Resources */,
 				61DAFC17200B9AB3001CB2E2 /* LaunchScreen.storyboard in Resources */,
 				61DAFC14200B9AB3001CB2E2 /* Assets.xcassets in Resources */,
 				618F61D6204064C900CAE2A3 /* Scenar.json in Resources */,
+				BB12ECB32359A4440024D60E /* AAOUUUU.mp3 in Resources */,
 				61DAFC12200B9AB3001CB2E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
