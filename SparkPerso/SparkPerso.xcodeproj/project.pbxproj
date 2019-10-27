@@ -82,6 +82,8 @@
 		61DAFC14200B9AB3001CB2E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61DAFC13200B9AB3001CB2E2 /* Assets.xcassets */; };
 		61DAFC17200B9AB3001CB2E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61DAFC15200B9AB3001CB2E2 /* LaunchScreen.storyboard */; };
 		61F339AB23250521000967B2 /* SpheroStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F339AA23250521000967B2 /* SpheroStatusViewController.swift */; };
+		BB03A4DF2365F772008751BA /* MovementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB03A4DE2365F772008751BA /* MovementManager.swift */; };
+		BB03A4E2236611CD008751BA /* SparkMovementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB03A4E1236611CD008751BA /* SparkMovementManager.swift */; };
 		BB12ECAB235895620024D60E /* TP1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECAA235895620024D60E /* TP1ViewController.swift */; };
 		BB12ECAD2358A9BB0024D60E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECAC2358A9BB0024D60E /* Helpers.swift */; };
 		BB12ECAF2358F0630024D60E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECAE2358F0630024D60E /* Utilities.swift */; };
@@ -89,7 +91,6 @@
 		BB12ECB42359A4440024D60E /* OUUUU.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB12ECB22359A4440024D60E /* OUUUU.mp3 */; };
 		BB12ECB72359AF450024D60E /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECB62359AF450024D60E /* SoundManager.swift */; };
 		BB12ECB92359B1270024D60E /* MyMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECB82359B1270024D60E /* MyMove.swift */; };
-		BB12ECBB2359B7540024D60E /* GenericMovementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECBA2359B7540024D60E /* GenericMovementManager.swift */; };
 		BB252CF9234BF5D600BC9F79 /* Pods_SparkPerso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; };
 		BB252CFA234BF5D600BC9F79 /* Pods_SparkPerso.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBFE03A32359F01C00BD9818 /* TP2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE03A22359F01C00BD9818 /* TP2ViewController.swift */; };
@@ -200,6 +201,8 @@
 		61DAFC18200B9AB3001CB2E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61F339AA23250521000967B2 /* SpheroStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpheroStatusViewController.swift; sourceTree = "<group>"; };
 		9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparkPerso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB03A4DE2365F772008751BA /* MovementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementManager.swift; sourceTree = "<group>"; };
+		BB03A4E1236611CD008751BA /* SparkMovementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkMovementManager.swift; sourceTree = "<group>"; };
 		BB12ECAA235895620024D60E /* TP1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP1ViewController.swift; sourceTree = "<group>"; };
 		BB12ECAC2358A9BB0024D60E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		BB12ECAE2358F0630024D60E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -207,7 +210,6 @@
 		BB12ECB22359A4440024D60E /* OUUUU.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OUUUU.mp3; sourceTree = "<group>"; };
 		BB12ECB62359AF450024D60E /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		BB12ECB82359B1270024D60E /* MyMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMove.swift; sourceTree = "<group>"; };
-		BB12ECBA2359B7540024D60E /* GenericMovementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMovementManager.swift; sourceTree = "<group>"; };
 		BBFE03A22359F01C00BD9818 /* TP2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP2ViewController.swift; sourceTree = "<group>"; };
 		BBFE03A42359F2EA00BD9818 /* MyMoveSphero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoveSphero.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -487,6 +489,7 @@
 		61DAFC0B200B9AB3001CB2E2 /* SparkPerso */ = {
 			isa = PBXGroup;
 			children = (
+				BB03A4E023661128008751BA /* Global */,
 				BB12ECB02359A4220024D60E /* Sounds */,
 				61DAFC0E200B9AB3001CB2E2 /* ConnectionViewController.swift */,
 				612304B7200BC74500F98395 /* SparkStarter */,
@@ -497,8 +500,6 @@
 				61DAFC13200B9AB3001CB2E2 /* Assets.xcassets */,
 				61DAFC15200B9AB3001CB2E2 /* LaunchScreen.storyboard */,
 				61DAFC18200B9AB3001CB2E2 /* Info.plist */,
-				BB12ECAC2358A9BB0024D60E /* Helpers.swift */,
-				BB12ECAE2358F0630024D60E /* Utilities.swift */,
 				BB12ECB62359AF450024D60E /* SoundManager.swift */,
 			);
 			path = SparkPerso;
@@ -513,12 +514,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BB03A4E023661128008751BA /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				BB12ECAC2358A9BB0024D60E /* Helpers.swift */,
+				BB12ECAE2358F0630024D60E /* Utilities.swift */,
+				BB03A4DE2365F772008751BA /* MovementManager.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
 		BB12ECA9235895340024D60E /* TP */ = {
 			isa = PBXGroup;
 			children = (
 				BB12ECAA235895620024D60E /* TP1ViewController.swift */,
 				BB12ECB82359B1270024D60E /* MyMove.swift */,
-				BB12ECBA2359B7540024D60E /* GenericMovementManager.swift */,
+				BB03A4E1236611CD008751BA /* SparkMovementManager.swift */,
 			);
 			path = TP;
 			sourceTree = "<group>";
@@ -719,6 +730,7 @@
 			files = (
 				61C3D68F231BF82F00F98C11 /* String+Utils.swift in Sources */,
 				612304BE200BDCEE00F98395 /* TakeOffAndLandingViewController.swift in Sources */,
+				BB03A4E2236611CD008751BA /* SparkMovementManager.swift in Sources */,
 				6184E2D921E8ABB000895FDF /* DirectionSequence.swift in Sources */,
 				61C3D695231C12BC00F98C11 /* SpheroLedsViewController.swift in Sources */,
 				612304B9200BC77200F98395 /* CalibrationAndHeadingViewController.swift in Sources */,
@@ -771,8 +783,8 @@
 				BBFE03A52359F2EA00BD9818 /* MyMoveSphero.swift in Sources */,
 				61C3D685231BF82F00F98C11 /* ShouldActionCompleteResponse.swift in Sources */,
 				6117056921F75E4D009F47E4 /* Spark.swift in Sources */,
+				BB03A4DF2365F772008751BA /* MovementManager.swift in Sources */,
 				6184E2DB21E8ABB300895FDF /* CGPoints+Extensions.swift in Sources */,
-				BB12ECBB2359B7540024D60E /* GenericMovementManager.swift in Sources */,
 				61C3D693231BFE6900F98C11 /* SpheroDirectionViewController.swift in Sources */,
 				612304AA200BABF200F98395 /* ProductCommunicationManager.swift in Sources */,
 				61C3D691231BFD5F00F98C11 /* SpheroAimingViewController.swift in Sources */,

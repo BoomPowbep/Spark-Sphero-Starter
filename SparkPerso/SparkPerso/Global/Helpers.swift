@@ -14,7 +14,10 @@ func delay(_ delay:Double, closure:@escaping ()->()) {
     DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
 }
 
+// DRONE MAX SPEED = 1
+// SPHERO MAX SPEED = 250
 extension UIViewController {
+    
     func askForDurationAndSpeed(callback:@escaping(Double,Double)->()) {
         let ac = UIAlertController(title: "Enter speed and duration", message: nil, preferredStyle: .alert)
         ac.addTextField { (txt) in

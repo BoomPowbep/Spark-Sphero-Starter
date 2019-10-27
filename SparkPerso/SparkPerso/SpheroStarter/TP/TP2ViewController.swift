@@ -160,12 +160,6 @@ class TP2ViewController: UIViewController {
         soundManager.playSound(sound: SoundManager.Sound.AAOUUUU)
     }
     
-    
-    
-    
-    
-    
-    
     @IBAction func onFrontButtonClick(_ sender: Any) {
         self.askForDurationSpeedAndHeading { (speed, duration, heading) in
             self.mSequence.append(SpheroMove(duration: duration, speed: speed, heading:heading))

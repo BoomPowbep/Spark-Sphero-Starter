@@ -988,7 +988,7 @@ Current Heading: 0</string>
                         <outlet property="clearSequenceButton" destination="3oP-JO-JmI" id="Sdi-bZ-kfg"/>
                         <outlet property="displaySequenceButton" destination="qaA-uY-2Ga" id="l28-t2-GOc"/>
                         <outlet property="frontButton" destination="bjO-pu-n9m" id="0HB-Fp-gpp"/>
-                        <outlet property="logsTextView" destination="WUn-lV-2dV" id="X8t-Yr-VOh"/>
+                        <outlet property="logsTextView" destination="WUn-lV-2dV" id="4fh-iM-i5u"/>
                         <outlet property="rotateLeftButton" destination="bgX-Hr-aYC" id="elB-uQ-1z1"/>
                         <outlet property="rotateRight" destination="VS9-ij-UbZ" id="ZU9-se-hCE"/>
                         <outlet property="startButton" destination="wHn-DP-Yw7" id="ssX-RG-uN9"/>
@@ -1363,7 +1363,6 @@ Current Heading: 0</string>
                     <connections>
                         <outlet property="clearSequenceButton" destination="im0-ue-uaM" id="r4f-WM-UZh"/>
                         <outlet property="displaySequenceButton" destination="Oi9-ya-Cjt" id="61h-6J-Emg"/>
-                        <outlet property="logsTextView" destination="CoR-0F-WMZ" id="PKV-A8-k9j"/>
                         <outlet property="startButton" destination="Qrf-YT-bDm" id="pXF-Ve-FJa"/>
                         <outlet property="stopButton" destination="1Ul-Sx-vlS" id="Wjj-BA-qCI"/>
                     </connections>

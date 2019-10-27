@@ -10,21 +10,10 @@ import UIKit
 import DJISDK
 
 class TP1ViewController: UIViewController {
-    
-    private var soundManager:SoundManager = SoundManager()
-    
-    private var mSequence:[MyMove] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                log(textView: self.logsTextView, message: self.sequenceDescription())
-            }
-        }
-    }
-    private var mSequenceIndex:Int = 0
-    private var mSequenceRunning:Bool = false
-    private let displacement:Float = 0.3
-    
+
     @IBOutlet weak var logsTextView: UITextView!
+    
+    private var movementManager:SparkMovementManager! = nil
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var frontButton: UIButton!
@@ -36,185 +25,64 @@ class TP1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Init sequence array - Directions test sequence
-        //        mSequence = [forward, backwards, rightYaw, leftYaw, rightRoll, leftRoll, up, down]
-        //        mSequence = [
-        //            RightRotation90Move(breakDuration: 1),
-        //            ForwardMove(duration: 1, breakDuration: 1),
-        //            LeftRotation90Move(breakDuration: 1)
-        //        ]
-        
-        mSequence = []
-        
-        // Init sequence array - Square sequence
-        //        mSequence = [forward, rightYaw, forward, rightYaw, forward, rightYaw, forward, rightYaw]
-    }
-    
-    // MARK: - Sequencer
-    
-    func startSequence() {
-        if(mSequence.count > 0) {
-            mSequenceRunning = true
-            startButton.isEnabled = false
-            displaySequenceButton.isEnabled = false
-            clearSequenceButton.isEnabled = false
-            iterateSequence()
-        }
-        else {
-            displaySequenceButton.isEnabled = true
-            clearSequenceButton.isEnabled = true
-            log(textView: logsTextView, message: "\n[->][X] Empty sequence. Cancelling.\n")
-        }
-    }
-    
-    func iterateSequence() {
-        if(self.mSequenceRunning) {
-            // Move drone
-            move(move: mSequence[mSequenceIndex])
-            log(textView: logsTextView, message: "[DOING] " + self.mSequence[self.mSequenceIndex].description)
-            
-            delay(mSequence[mSequenceIndex].durationInSec) {
-                // STOP drone
-                self.stop()
-                if(self.mSequenceRunning) {
-                    log(textView: self.logsTextView, message: "[END OF ITERATION]\n")
-                }
-                
-                // Continue if sequence is not cancelled and next array iteration exists
-                if(self.mSequenceRunning && self.mSequence.indices.contains(self.mSequenceIndex+1)) {
-                    
-                    // Do a break if necessary
-                    delay(self.mSequence[self.mSequenceIndex].breakDurationInSec) {
-                        self.mSequenceIndex += 1
-                        self.iterateSequence() // Loop
-                    }
-                }
-                else { // End of sequence, reset parameters
-                    self.resetSequence()
-                }
-            }
-        }
-        else {
-            self.resetSequence()
-        }
-    }
-    
-    func resetSequence() {
-        stop()
-        if(mSequenceRunning) {
-            log(textView: self.logsTextView, message: "[END OF SEQUENCE]")
-        }
-        self.mSequenceRunning = false
-        self.mSequenceIndex = 0
-        startButton.isEnabled = true
-        displaySequenceButton.isEnabled = true
-        clearSequenceButton.isEnabled = true
-    }
-    
-    func sequenceDescription() -> String {
-        var fullDescription = "\n"
-        
-        for move in mSequence {
-            fullDescription += move.description + "\n"
-        }
-        return fullDescription
-    }
-    
-    // MARK: - Drone Movement
-    
-    func move(move:MyMove) {
-        if let mySpark = DJISDKManager.product() as? DJIAircraft {
-            stop() // IMPORTANT: ERASE ALL VALUES BEFORE ASSIGNING NEW MOVE
-            switch(move.direction) {
-            case .front :
-                mySpark.mobileRemoteController?.rightStickVertical = Float(move.speed)
-            case .back:
-                mySpark.mobileRemoteController?.rightStickVertical = Float(-move.speed)
-            case .rotateLeft:
-                mySpark.mobileRemoteController?.leftStickHorizontal = Float(-move.speed)
-            case .rotateRight:
-                mySpark.mobileRemoteController?.leftStickHorizontal = Float(move.speed)
-            case .up:
-                mySpark.mobileRemoteController?.leftStickVertical = Float(move.speed)
-            case .down:
-                mySpark.mobileRemoteController?.leftStickVertical = Float(-move.speed)
-            case .translateLeft:
-                mySpark.mobileRemoteController?.rightStickHorizontal = Float(-move.speed)
-            case .translateRight:
-                mySpark.mobileRemoteController?.rightStickHorizontal = Float(move.speed)
-            case .none:
-                stop()
-            }
-        }
-    }
-    
-    func stop() {
-        if let mySpark = DJISDKManager.product() as? DJIAircraft {
-            mySpark.mobileRemoteController?.leftStickVertical = 0.0
-            mySpark.mobileRemoteController?.leftStickHorizontal = 0.0
-            mySpark.mobileRemoteController?.rightStickHorizontal = 0.0
-            mySpark.mobileRemoteController?.rightStickVertical = 0.0
-        }
+        movementManager = SparkMovementManager(pLogsTextView: logsTextView)
     }
     
     // MARK: - Buttons handlers
     
     @IBAction func startButtonClicked(_ sender: Any) {
         
-        log(textView: logsTextView, message: "\n[->] START button clicked\n")
+        log(textView: logsTextView, message: "[->] START button clicked\n")
         
         // Check if sequence is already running
-        if(mSequenceRunning) {
+        if(movementManager.mSequenceRunning) {
             log(textView: logsTextView, message: "\n[WARNING] Sequence already running! Cancelled.\n")
         }
         else {
-            startSequence()
+            movementManager.startSequence()
         }
         
-        soundManager.playSound(sound: SoundManager.Sound.OUUUU)
+//        soundManager.playSound(sound: SoundManager.Sound.OUUUU)
     }
     
     @IBAction func stopButtonClicked(_ sender: Any) {
         
         log(textView: logsTextView, message: "\n[X] STOP button clicked\n[SEQUENCE CANCELLED]")
         
-        mSequenceRunning = false
-        stop()
+        movementManager.mSequenceRunning = false
+        movementManager.stop()
         startButton.isEnabled = true
         
-        displaySequenceButton.isEnabled = true
-        clearSequenceButton.isEnabled = true
-        
-        soundManager.playSound(sound: SoundManager.Sound.AAOUUUU)
+//        soundManager.playSound(sound: SoundManager.Sound.AAOUUUU)
     }
     
     
     @IBAction func displaySequenceButtonClicked(_ sender: Any) {
-        log(textView: logsTextView, message: sequenceDescription())
+        log(textView: logsTextView, message: movementManager.sequenceDescription())
     }
     
     @IBAction func clearSequenceButtonClicked(_ sender: Any) {
-        mSequenceRunning = false
-        mSequence = []
-//        startButton.isEnabled = false
+        movementManager.mSequenceRunning = false
+        movementManager.mSequence = []
+        log(textView: self.logsTextView, message: "SEQUENCE CLEARED")
     }
     
     @IBAction func moveFrontButtonClicked(_ sender: Any) {
         self.askForDurationAndSpeed { (speed, duration) in
-            self.mSequence.append(ForwardMove(duration: duration, speed:speed, breakDuration: 1))
+            self.movementManager.mSequence.append(ForwardMove(duration: duration, speed:speed, breakDuration: 1))
         }
     }
     
     @IBAction func rotateLeftButtonClicked(_ sender: Any) {
         self.askForDurationAndSpeed { (speed, duration) in
-            self.mSequence.append(LeftRotationMove(duration: 3, speed:speed, breakDuration: 1))
+            self.movementManager.mSequence.append(LeftRotationMove(duration: 3, speed:speed, breakDuration: 1))
         }
         
     }
     
     @IBAction func rotateRightButtonClicked(_ sender: Any) {
         self.askForDurationAndSpeed { (speed, duration) in
-            self.mSequence.append(RightRotationMove(duration: 3, speed:speed, breakDuration: 1))
+            self.movementManager.mSequence.append(RightRotationMove(duration: 3, speed:speed, breakDuration: 1))
         }
         
     }
