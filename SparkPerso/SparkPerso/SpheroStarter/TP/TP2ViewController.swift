@@ -116,6 +116,8 @@ class TP2ViewController: UIViewController {
             _ = SharedToyBox.instance.bolts.map{ $0.stopRoll(heading: move.heading) }
         }
         
+        _ = SharedToyBox.instance.bolts.map{ $0.getPowerState() }
+        
     }
     
     func stop() {
