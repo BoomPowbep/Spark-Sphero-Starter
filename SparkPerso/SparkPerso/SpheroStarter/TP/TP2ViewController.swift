@@ -12,13 +12,8 @@ class TP2ViewController: UIViewController {
 
     private var soundManager:SoundManager = SoundManager()
     
-    private var mSequence:[MyMoveSphero] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                log(textView: self.logsTextView, message: self.sequenceDescription())
-            }
-        }
-    }
+    @IBOutlet weak var logsTextView: UITextView!
+   
     
     private var mSequenceIndex:Int = 0
     private var mSequenceRunning:Bool = false
@@ -28,7 +23,14 @@ class TP2ViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var displaySequenceButton: UIButton!
     @IBOutlet weak var clearSequenceButton: UIButton!
-    @IBOutlet weak var logsTextView: UITextView!
+    
+    private var mSequence:[MyMoveSphero] = [] {
+           didSet {
+               DispatchQueue.main.async {
+                   log(textView: self.logsTextView, message: self.sequenceDescription())
+               }
+           }
+       }
     
     override func viewDidLoad() {
         super.viewDidLoad()

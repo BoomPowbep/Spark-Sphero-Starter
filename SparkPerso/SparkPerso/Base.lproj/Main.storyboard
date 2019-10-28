@@ -1363,6 +1363,7 @@ Current Heading: 0</string>
                     <connections>
                         <outlet property="clearSequenceButton" destination="im0-ue-uaM" id="r4f-WM-UZh"/>
                         <outlet property="displaySequenceButton" destination="Oi9-ya-Cjt" id="61h-6J-Emg"/>
+                        <outlet property="logsTextView" destination="CoR-0F-WMZ" id="anD-Xb-ubv"/>
                         <outlet property="startButton" destination="Qrf-YT-bDm" id="pXF-Ve-FJa"/>
                         <outlet property="stopButton" destination="1Ul-Sx-vlS" id="Wjj-BA-qCI"/>
                     </connections>
