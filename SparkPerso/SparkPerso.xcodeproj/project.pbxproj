@@ -93,6 +93,10 @@
 		BB12ECB92359B1270024D60E /* MyMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECB82359B1270024D60E /* MyMove.swift */; };
 		BB252CF9234BF5D600BC9F79 /* Pods_SparkPerso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; };
 		BB252CFA234BF5D600BC9F79 /* Pods_SparkPerso.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBAB7B8B2369BC5400F3EB12 /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB7B882369B9B500F3EB12 /* SocketIO.framework */; };
+		BBAB7B8C2369BC5400F3EB12 /* SocketIO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB7B882369B9B500F3EB12 /* SocketIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBAB7B8D2369BC5900F3EB12 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB7B7F2369B99F00F3EB12 /* Starscream.framework */; };
+		BBAB7B8E2369BC5900F3EB12 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB7B7F2369B99F00F3EB12 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBFE03A32359F01C00BD9818 /* TP2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE03A22359F01C00BD9818 /* TP2ViewController.swift */; };
 		BBFE03A52359F2EA00BD9818 /* MyMoveSphero.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE03A42359F2EA00BD9818 /* MyMoveSphero.swift */; };
 /* End PBXBuildFile section */
@@ -105,6 +109,34 @@
 			remoteGlobalIDString = 61DAFC08200B9AB3001CB2E2;
 			remoteInfo = SparkPerso;
 		};
+		BBAB7B7E2369B99F00F3EB12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBAB7B792369B99F00F3EB12 /* Starscream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 33CCF0921F5DDC030099B092;
+			remoteInfo = Starscream;
+		};
+		BBAB7B802369B99F00F3EB12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBAB7B792369B99F00F3EB12 /* Starscream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 335FA2021F5DF71D00F6D2EC;
+			remoteInfo = "Starscream Tests";
+		};
+		BBAB7B872369B9B500F3EB12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBAB7B822369B9B500F3EB12 /* Socket.IO-Client-Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 572EF2381B51F18A00EEBB58;
+			remoteInfo = SocketIO;
+		};
+		BBAB7B892369B9B500F3EB12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBAB7B822369B9B500F3EB12 /* Socket.IO-Client-Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 572EF2421B51F18A00EEBB58;
+			remoteInfo = "SocketIO-Tests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -114,6 +146,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BBAB7B8C2369BC5400F3EB12 /* SocketIO.framework in Embed Frameworks */,
+				BBAB7B8E2369BC5900F3EB12 /* Starscream.framework in Embed Frameworks */,
 				BB252CFA234BF5D600BC9F79 /* Pods_SparkPerso.framework in Embed Frameworks */,
 				612304B5200BBC1E00F98395 /* VideoPreviewer.framework in Embed Frameworks */,
 			);
@@ -210,6 +244,8 @@
 		BB12ECB22359A4440024D60E /* OUUUU.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OUUUU.mp3; sourceTree = "<group>"; };
 		BB12ECB62359AF450024D60E /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		BB12ECB82359B1270024D60E /* MyMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMove.swift; sourceTree = "<group>"; };
+		BBAB7B792369B99F00F3EB12 /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = "Starscream-master/Starscream.xcodeproj"; sourceTree = "<group>"; };
+		BBAB7B822369B9B500F3EB12 /* Socket.IO-Client-Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Socket.IO-Client-Swift.xcodeproj"; path = "socket.io-client-swift-master/Socket.IO-Client-Swift.xcodeproj"; sourceTree = "<group>"; };
 		BBFE03A22359F01C00BD9818 /* TP2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP2ViewController.swift; sourceTree = "<group>"; };
 		BBFE03A42359F2EA00BD9818 /* MyMoveSphero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoveSphero.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,6 +262,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAB7B8B2369BC5400F3EB12 /* SocketIO.framework in Frameworks */,
+				BBAB7B8D2369BC5900F3EB12 /* Starscream.framework in Frameworks */,
 				BB252CF9234BF5D600BC9F79 /* Pods_SparkPerso.framework in Frameworks */,
 				612304B4200BBC1E00F98395 /* VideoPreviewer.framework in Frameworks */,
 			);
@@ -469,6 +507,8 @@
 		61DAFC00200B9AB3001CB2E2 = {
 			isa = PBXGroup;
 			children = (
+				BBAB7B822369B9B500F3EB12 /* Socket.IO-Client-Swift.xcodeproj */,
+				BBAB7B792369B99F00F3EB12 /* Starscream.xcodeproj */,
 				61DAFC0B200B9AB3001CB2E2 /* SparkPerso */,
 				6184E2CF21E8ABA600895FDF /* SparkPersoTests */,
 				61DAFC0A200B9AB3001CB2E2 /* Products */,
@@ -541,6 +581,24 @@
 				BB12ECB22359A4440024D60E /* OUUUU.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		BBAB7B7A2369B99F00F3EB12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB7B7F2369B99F00F3EB12 /* Starscream.framework */,
+				BBAB7B812369B99F00F3EB12 /* Starscream Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBAB7B832369B9B500F3EB12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB7B882369B9B500F3EB12 /* SocketIO.framework */,
+				BBAB7B8A2369B9B500F3EB12 /* SocketIO-Tests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BBFE03A12359EF3E00BD9818 /* TP */ = {
@@ -639,6 +697,16 @@
 			mainGroup = 61DAFC00200B9AB3001CB2E2;
 			productRefGroup = 61DAFC0A200B9AB3001CB2E2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BBAB7B832369B9B500F3EB12 /* Products */;
+					ProjectRef = BBAB7B822369B9B500F3EB12 /* Socket.IO-Client-Swift.xcodeproj */;
+				},
+				{
+					ProductGroup = BBAB7B7A2369B99F00F3EB12 /* Products */;
+					ProjectRef = BBAB7B792369B99F00F3EB12 /* Starscream.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				61DAFC08200B9AB3001CB2E2 /* SparkPerso */,
@@ -646,6 +714,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BBAB7B7F2369B99F00F3EB12 /* Starscream.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Starscream.framework;
+			remoteRef = BBAB7B7E2369B99F00F3EB12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BBAB7B812369B99F00F3EB12 /* Starscream Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Starscream Tests.xctest";
+			remoteRef = BBAB7B802369B99F00F3EB12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BBAB7B882369B9B500F3EB12 /* SocketIO.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SocketIO.framework;
+			remoteRef = BBAB7B872369B9B500F3EB12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BBAB7B8A2369B9B500F3EB12 /* SocketIO-Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SocketIO-Tests.xctest";
+			remoteRef = BBAB7B892369B9B500F3EB12 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6184E2CC21E8ABA600895FDF /* Resources */ = {

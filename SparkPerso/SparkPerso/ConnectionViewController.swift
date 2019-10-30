@@ -9,6 +9,8 @@
 import UIKit
 import DJISDK
 
+import SocketIO
+
 
 class ConnectionViewController: UIViewController {
     
