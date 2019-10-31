@@ -7,7 +7,20 @@
 		<key>SparkPerso.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>6184E2CD21E8ABA600895FDF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61DAFC08200B9AB3001CB2E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -9,18 +9,30 @@
 import UIKit
 import DJISDK
 
-import SocketIO
-
-
 class ConnectionViewController: UIViewController {
     
     @IBOutlet weak var connectionStateSpheroLabel: UILabel!
     @IBOutlet weak var connectionStateLabel: UILabel!
     let SSID = ""
     
+    
+    @IBOutlet weak var socketConnectionStateLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("/!\\ /!\\ /!\\ /!\\ /!\\ ASFGDFHGJHKGFDSDERDTFZGUHIZTRETZUIZTRETZZTRTZU /!\\ /!\\ /!\\ /!\\ /!\\")
+        SocketIOManager.instance.setup()
+        SocketIOManager.instance.connect {
+            print("\n[SOCKET] Connected\n")
+            SocketIOManager.instance.writeValue("Hello", toChannel: "message") {
+                print("\n[SOCKET] write OK\n")
+            }
+        }
+//        SocketIOManager.instance.listenToChannel(channel: "message") {
+//
+//        }
         
     }
     
@@ -50,6 +62,12 @@ class ConnectionViewController: UIViewController {
                 self.connectionStateSpheroLabel.text = "Connected"
             }
         }
+    }
+    
+    // MARK: - Socket
+    
+    @IBAction func socketConnectionButtonClicked(_ sender: Any) {
+        
     }
     
 }
@@ -119,5 +137,8 @@ extension ConnectionViewController {
         self.connectionStateLabel.text = "Disconnected"
         print("Disconnected")
     }
+    
+    
+    
 }
 

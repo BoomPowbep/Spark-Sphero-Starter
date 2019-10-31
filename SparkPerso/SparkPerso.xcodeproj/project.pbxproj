@@ -97,6 +97,14 @@
 		BBAB7B8C2369BC5400F3EB12 /* SocketIO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB7B882369B9B500F3EB12 /* SocketIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBAB7B8D2369BC5900F3EB12 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB7B7F2369B99F00F3EB12 /* Starscream.framework */; };
 		BBAB7B8E2369BC5900F3EB12 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB7B7F2369B99F00F3EB12 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBAB7B922369C04800F3EB12 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB7B912369C04800F3EB12 /* SocketIOManager.swift */; };
+		BBC00625236B2EC100B6FF9E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC0061E236B2EC100B6FF9E /* Error.swift */; };
+		BBC00626236B2EC100B6FF9E /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC0061F236B2EC100B6FF9E /* Storage.swift */; };
+		BBC00627236B2EC100B6FF9E /* Activation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC00620236B2EC100B6FF9E /* Activation.swift */; };
+		BBC00628236B2EC100B6FF9E /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC00621236B2EC100B6FF9E /* Dataset.swift */; };
+		BBC00629236B2EC100B6FF9E /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC00622236B2EC100B6FF9E /* Structure.swift */; };
+		BBC0062A236B2EC100B6FF9E /* NeuralNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC00623236B2EC100B6FF9E /* NeuralNet.swift */; };
+		BBC0062B236B2EC100B6FF9E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC00624236B2EC100B6FF9E /* Cache.swift */; };
 		BBFE03A32359F01C00BD9818 /* TP2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE03A22359F01C00BD9818 /* TP2ViewController.swift */; };
 		BBFE03A52359F2EA00BD9818 /* MyMoveSphero.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE03A42359F2EA00BD9818 /* MyMoveSphero.swift */; };
 /* End PBXBuildFile section */
@@ -246,6 +254,14 @@
 		BB12ECB82359B1270024D60E /* MyMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMove.swift; sourceTree = "<group>"; };
 		BBAB7B792369B99F00F3EB12 /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = "Starscream-master/Starscream.xcodeproj"; sourceTree = "<group>"; };
 		BBAB7B822369B9B500F3EB12 /* Socket.IO-Client-Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Socket.IO-Client-Swift.xcodeproj"; path = "socket.io-client-swift-master/Socket.IO-Client-Swift.xcodeproj"; sourceTree = "<group>"; };
+		BBAB7B912369C04800F3EB12 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		BBC0061E236B2EC100B6FF9E /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		BBC0061F236B2EC100B6FF9E /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		BBC00620236B2EC100B6FF9E /* Activation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activation.swift; sourceTree = "<group>"; };
+		BBC00621236B2EC100B6FF9E /* Dataset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
+		BBC00622236B2EC100B6FF9E /* Structure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
+		BBC00623236B2EC100B6FF9E /* NeuralNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNet.swift; sourceTree = "<group>"; };
+		BBC00624236B2EC100B6FF9E /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		BBFE03A22359F01C00BD9818 /* TP2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP2ViewController.swift; sourceTree = "<group>"; };
 		BBFE03A42359F2EA00BD9818 /* MyMoveSphero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoveSphero.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -529,6 +545,8 @@
 		61DAFC0B200B9AB3001CB2E2 /* SparkPerso */ = {
 			isa = PBXGroup;
 			children = (
+				BBC00619236B2EAE00B6FF9E /* NeuralNet */,
+				BBAB7B8F2369C02500F3EB12 /* Communication */,
 				BB03A4E023661128008751BA /* Global */,
 				BB12ECB02359A4220024D60E /* Sounds */,
 				61DAFC0E200B9AB3001CB2E2 /* ConnectionViewController.swift */,
@@ -599,6 +617,36 @@
 				BBAB7B8A2369B9B500F3EB12 /* SocketIO-Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BBAB7B8F2369C02500F3EB12 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB7B902369C02F00F3EB12 /* SocketIO */,
+			);
+			path = Communication;
+			sourceTree = "<group>";
+		};
+		BBAB7B902369C02F00F3EB12 /* SocketIO */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB7B912369C04800F3EB12 /* SocketIOManager.swift */,
+			);
+			path = SocketIO;
+			sourceTree = "<group>";
+		};
+		BBC00619236B2EAE00B6FF9E /* NeuralNet */ = {
+			isa = PBXGroup;
+			children = (
+				BBC00620236B2EC100B6FF9E /* Activation.swift */,
+				BBC00624236B2EC100B6FF9E /* Cache.swift */,
+				BBC00621236B2EC100B6FF9E /* Dataset.swift */,
+				BBC0061E236B2EC100B6FF9E /* Error.swift */,
+				BBC00623236B2EC100B6FF9E /* NeuralNet.swift */,
+				BBC0061F236B2EC100B6FF9E /* Storage.swift */,
+				BBC00622236B2EC100B6FF9E /* Structure.swift */,
+			);
+			path = NeuralNet;
 			sourceTree = "<group>";
 		};
 		BBFE03A12359EF3E00BD9818 /* TP */ = {
@@ -831,10 +879,13 @@
 				612304BE200BDCEE00F98395 /* TakeOffAndLandingViewController.swift in Sources */,
 				BB03A4E2236611CD008751BA /* SparkMovementManager.swift in Sources */,
 				6184E2D921E8ABB000895FDF /* DirectionSequence.swift in Sources */,
+				BBAB7B922369C04800F3EB12 /* SocketIOManager.swift in Sources */,
 				61C3D695231C12BC00F98C11 /* SpheroLedsViewController.swift in Sources */,
+				BBC00628236B2EC100B6FF9E /* Dataset.swift in Sources */,
 				612304B9200BC77200F98395 /* CalibrationAndHeadingViewController.swift in Sources */,
 				61C3D687231BF82F00F98C11 /* SensorCommandResponse.swift in Sources */,
 				61C3D684231BF82F00F98C11 /* VersionsCommandResponse.swift in Sources */,
+				BBC0062B236B2EC100B6FF9E /* Cache.swift in Sources */,
 				61C3D677231BF82F00F98C11 /* SpheroV2Toy.swift in Sources */,
 				61C3D68D231BF82F00F98C11 /* CommandV1.swift in Sources */,
 				61CC82FD231E4A8D001AE806 /* LocatorViewController.swift in Sources */,
@@ -867,6 +918,7 @@
 				BB12ECAB235895620024D60E /* TP1ViewController.swift in Sources */,
 				61C3D671231BF82F00F98C11 /* SensorControlV1.swift in Sources */,
 				61C3D682231BF82F00F98C11 /* CommandSequencerV2.swift in Sources */,
+				BBC00626236B2EC100B6FF9E /* Storage.swift in Sources */,
 				6184E2E021E8ABE800895FDF /* Movement.swift in Sources */,
 				BB12ECAD2358A9BB0024D60E /* Helpers.swift in Sources */,
 				61C3D697231C170900F98C11 /* SpheroSensorControlViewController.swift in Sources */,
@@ -880,6 +932,7 @@
 				6117015521F5F12D009F47E4 /* GimbalManager.swift in Sources */,
 				61C3D678231BF82F00F98C11 /* BoltToy.swift in Sources */,
 				BBFE03A52359F2EA00BD9818 /* MyMoveSphero.swift in Sources */,
+				BBC0062A236B2EC100B6FF9E /* NeuralNet.swift in Sources */,
 				61C3D685231BF82F00F98C11 /* ShouldActionCompleteResponse.swift in Sources */,
 				6117056921F75E4D009F47E4 /* Spark.swift in Sources */,
 				BB03A4DF2365F772008751BA /* MovementManager.swift in Sources */,
@@ -891,6 +944,7 @@
 				BBFE03A32359F01C00BD9818 /* TP2ViewController.swift in Sources */,
 				61D50D7220274586000842A3 /* AccelerometerViewController.swift in Sources */,
 				61C3D68A231BF82F00F98C11 /* CollisionData.swift in Sources */,
+				BBC00629236B2EC100B6FF9E /* Structure.swift in Sources */,
 				61C3D675231BF82F00F98C11 /* SensorControlV2.swift in Sources */,
 				61C3D67D231BF82F00F98C11 /* CBUUID+SpheroUUIDs.swift in Sources */,
 				61C3D670231BF82F00F98C11 /* SPRKToy.swift in Sources */,
@@ -899,6 +953,8 @@
 				61DAFC0F200B9AB3001CB2E2 /* ConnectionViewController.swift in Sources */,
 				61C3D683231BF82F00F98C11 /* CommandV2.swift in Sources */,
 				61C3D688231BF82F00F98C11 /* SensorMaskCommandResponse.swift in Sources */,
+				BBC00625236B2EC100B6FF9E /* Error.swift in Sources */,
+				BBC00627236B2EC100B6FF9E /* Activation.swift in Sources */,
 				61DAFC0D200B9AB3001CB2E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1096,7 +1152,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SparkPerso/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mickaeldebalme.spark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1118,7 +1174,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SparkPerso/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mickaeldebalme.spark;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -24,13 +24,22 @@ class SpheroLedsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         SharedToyBox.instance.bolt?.setStabilization(state: SetStabilization.State.off)
-
+        self.drawABeautifulPattern()
+    }
+    
+    func drawABeautifulPattern() {
+        _ = SharedToyBox.instance.bolts.map {
+            $0.setMainLed(color: .red)
+            $0.setFrontLed(color: .green)
+            $0.setBackLed(color: .orange)
+            $0.drawMatrix(fillFrom: Pixel(x: 2, y: 2), to: Pixel(x: 5, y: 5), color: .purple)
+        }
     }
 
     @IBAction func sendTextClicked(_ sender: Any) {
         self.view.endEditing(true)
         if let displayTxt = textToDisplayTextField.text {
-            SharedToyBox.instance.bolts.map{
+            _ = SharedToyBox.instance.bolts.map{
                 $0.scrollMatrix(text: displayTxt, color: .blue, speed: 8, loop: .noLoop)
             }
         }
@@ -43,7 +52,7 @@ class SpheroLedsViewController: UIViewController {
             let yTxt = yGreen.text,
             let y = Int(yTxt)
         {
-            SharedToyBox.instance.bolts.map{ $0.drawMatrix(pixel: Pixel(x: x, y: y), color: .green) }
+            _ = SharedToyBox.instance.bolts.map{ $0.drawMatrix(pixel: Pixel(x: x, y: y), color: .green) }
         }
     }
     
@@ -54,7 +63,7 @@ class SpheroLedsViewController: UIViewController {
             let yTxt = yRed.text,
             let y = Int(yTxt)
         {
-            SharedToyBox.instance.bolts.map{ $0.drawMatrix(pixel: Pixel(x: x, y: y), color: .red) }
+            _ = SharedToyBox.instance.bolts.map{ $0.drawMatrix(pixel: Pixel(x: x, y: y), color: .red) }
         }
     }
     
