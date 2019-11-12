@@ -13,15 +13,16 @@ class SparkMovementManager : MovementManager {
     
     // MARK: - Declarations, initializations
     
-    override init(pLogsTextView: UITextView) {
-        super.init(pLogsTextView: pLogsTextView)
-     
+    override init(pLogsTextView: UITextView? = nil) {
+        super.init(pLogsTextView: pLogsTextView!)
+        
         self.displacement = 0.3
+        
+        GimbalManager.shared.setup(withDuration: 1.0, defaultPitch: -28.0)
     }
     
-    override func move(pMove: MyMove) {
-        super.move(pMove: pMove)
-        self.stop() // IMPORTANT: ERASE ALL VALUES BEFORE ASSIGNING NEW MOVE
+    override func doMove(pMove: MyMove) {
+        super.doMove(pMove: pMove)
         if let mySpark = DJISDKManager.product() as? DJIAircraft {
             switch(pMove.direction) {
             case .front :
@@ -42,8 +43,45 @@ class SparkMovementManager : MovementManager {
                 mySpark.mobileRemoteController?.rightStickHorizontal = Float(pMove.speed)
             case .none:
                 stop()
+            case .cameraFront:
+                GimbalManager.shared.lookFront()
+            case .cameraDown:
+                GimbalManager.shared.lookUnder()
+            case .takeOff:
+                if let mySpark = DJISDKManager.product() as? DJIAircraft {
+                    if let flightController = mySpark.flightController {
+                        flightController.startTakeoff(completion: { (err) in
+                            print(err.debugDescription)
+                        })
+                    }
+                }
+            case .land:
+                if let mySpark = DJISDKManager.product() as? DJIAircraft {
+                    if let flightController = mySpark.flightController {
+                        flightController.startLanding(completion: { (err) in
+                            print(err.debugDescription)
+                        })
+                    }
+                }
+            case .takePhoto:
+                print("photo")
             }
         }
+    }
+    
+    override func singleMove(pMove: MyMove) {
+        super.singleMove(pMove: pMove)
+        self.stop() // IMPORTANT: ERASE ALL VALUES BEFORE ASSIGNING NEW MOVE
+        
+        self.doMove(pMove: pMove)
+    }
+    
+    func ddddoubleMove(pMoves: [MyMove]) {
+        self.stop() // IMPORTANT: ERASE ALL VALUES BEFORE ASSIGNING NEW MOVE
+        
+        //        for move in pMoves {
+        //            self.doMove(pMove: move)
+        //        }
     }
     
     override func stop() {

@@ -42,7 +42,7 @@ class MovementManager {
     func iterateSequence() {
            if(self.mSequenceRunning) {
                // Move drone
-               move(pMove: mSequence[mSequenceIndex])
+               singleMove(pMove: mSequence[mSequenceIndex])
                log(textView: logsTextView, message: "[DOING] " + self.mSequence[self.mSequenceIndex].description)
                
                delay(mSequence[mSequenceIndex].durationInSec) {
@@ -91,8 +91,12 @@ class MovementManager {
     
     // MARK: - Movement
     
-    func move(pMove:MyMove) {
-        stop() // IMPORTANT: ERASE ALL VALUES BEFORE ASSIGNING NEW MOVE
+    func doMove(pMove:MyMove) {
+//        stop() // IMPORTANT: ERASE ALL VALUES BEFORE ASSIGNING NEW MOVE
+    }
+    
+    func singleMove(pMove: MyMove) {
+        
     }
     
     func stop() {

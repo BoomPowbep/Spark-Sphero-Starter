@@ -17,6 +17,7 @@ func log(textView:UITextView, message:String) {
     // Log in textView
     textView.text = textView.text + "\n" + message
     scrollToBottomOfUiTextView(textView: textView)
+    
 }
 
 // Scrolls to the bottom of an UITextView

@@ -91,6 +91,8 @@
 		BB12ECB42359A4440024D60E /* OUUUU.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB12ECB22359A4440024D60E /* OUUUU.mp3 */; };
 		BB12ECB72359AF450024D60E /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECB62359AF450024D60E /* SoundManager.swift */; };
 		BB12ECB92359B1270024D60E /* MyMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB12ECB82359B1270024D60E /* MyMove.swift */; };
+		BB14D948237969C0007979F2 /* ExoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14D947237969C0007979F2 /* ExoViewController.swift */; };
+		BB14D94B23796E0F007979F2 /* ExoSpheroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14D94A23796E0F007979F2 /* ExoSpheroViewController.swift */; };
 		BB252CF9234BF5D600BC9F79 /* Pods_SparkPerso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; };
 		BB252CFA234BF5D600BC9F79 /* Pods_SparkPerso.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBAB7B8B2369BC5400F3EB12 /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB7B882369B9B500F3EB12 /* SocketIO.framework */; };
@@ -252,6 +254,8 @@
 		BB12ECB22359A4440024D60E /* OUUUU.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OUUUU.mp3; sourceTree = "<group>"; };
 		BB12ECB62359AF450024D60E /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		BB12ECB82359B1270024D60E /* MyMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMove.swift; sourceTree = "<group>"; };
+		BB14D947237969C0007979F2 /* ExoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExoViewController.swift; sourceTree = "<group>"; };
+		BB14D94A23796E0F007979F2 /* ExoSpheroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExoSpheroViewController.swift; sourceTree = "<group>"; };
 		BBAB7B792369B99F00F3EB12 /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = "Starscream-master/Starscream.xcodeproj"; sourceTree = "<group>"; };
 		BBAB7B822369B9B500F3EB12 /* Socket.IO-Client-Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Socket.IO-Client-Swift.xcodeproj"; path = "socket.io-client-swift-master/Socket.IO-Client-Swift.xcodeproj"; sourceTree = "<group>"; };
 		BBAB7B912369C04800F3EB12 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
@@ -317,6 +321,7 @@
 		612304B7200BC74500F98395 /* SparkStarter */ = {
 			isa = PBXGroup;
 			children = (
+				BB14D942237969A8007979F2 /* Exo */,
 				BB12ECA9235895340024D60E /* TP */,
 				612304AB200BABF700F98395 /* HelpersFromSample */,
 				6117015C21F60C64009F47E4 /* IA */,
@@ -364,6 +369,7 @@
 		61C3D5E9231BF7E300F98C11 /* SpheroStarter */ = {
 			isa = PBXGroup;
 			children = (
+				BB14D94923796DFA007979F2 /* Exo */,
 				BBFE03A12359EF3E00BD9818 /* TP */,
 				61C3D698231C171F00F98C11 /* Graph */,
 				61C3D63D231BF82F00F98C11 /* SpheroSDK */,
@@ -599,6 +605,22 @@
 				BB12ECB22359A4440024D60E /* OUUUU.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		BB14D942237969A8007979F2 /* Exo */ = {
+			isa = PBXGroup;
+			children = (
+				BB14D947237969C0007979F2 /* ExoViewController.swift */,
+			);
+			path = Exo;
+			sourceTree = "<group>";
+		};
+		BB14D94923796DFA007979F2 /* Exo */ = {
+			isa = PBXGroup;
+			children = (
+				BB14D94A23796E0F007979F2 /* ExoSpheroViewController.swift */,
+			);
+			path = Exo;
 			sourceTree = "<group>";
 		};
 		BBAB7B7A2369B99F00F3EB12 /* Products */ = {
@@ -888,6 +910,7 @@
 				BBC0062B236B2EC100B6FF9E /* Cache.swift in Sources */,
 				61C3D677231BF82F00F98C11 /* SpheroV2Toy.swift in Sources */,
 				61C3D68D231BF82F00F98C11 /* CommandV1.swift in Sources */,
+				BB14D948237969C0007979F2 /* ExoViewController.swift in Sources */,
 				61CC82FD231E4A8D001AE806 /* LocatorViewController.swift in Sources */,
 				61C3D674231BF82F00F98C11 /* BB8Toy.swift in Sources */,
 				61C3D69D231C171F00F98C11 /* CGContext+GraphLines.swift in Sources */,
@@ -899,6 +922,7 @@
 				BB12ECB92359B1270024D60E /* MyMove.swift in Sources */,
 				61C3D66C231BF82F00F98C11 /* SharedToyBox.swift in Sources */,
 				61C3D676231BF82F00F98C11 /* BB9EToy.swift in Sources */,
+				BB14D94B23796E0F007979F2 /* ExoSpheroViewController.swift in Sources */,
 				61C3D66F231BF82F00F98C11 /* SensorControl.swift in Sources */,
 				61C3D67E231BF82F00F98C11 /* ToyBox.swift in Sources */,
 				BB12ECAF2358F0630024D60E /* Utilities.swift in Sources */,

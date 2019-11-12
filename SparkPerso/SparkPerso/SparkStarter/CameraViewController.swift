@@ -9,7 +9,7 @@
 import UIKit
 import DJISDK
 import VideoPreviewer
-//import ImageDetect
+import ImageDetect
 
 class CameraViewController: UIViewController {
 
@@ -61,15 +61,15 @@ class CameraViewController: UIViewController {
                     print(img.size)
                     // Resize it and put it in a neural network! :)
                 
-                    if let infos = ImageRecognition.shared.predictUsingCoreML(image: img){
-                        self.extractedFrameImageView.image = infos.0
-                        self.resultLabel.text = infos.1
-                    }else{
-                        self.extractedFrameImageView.image = nil
-                        self.resultLabel.text = ""
-                    }
+//                    if let infos = ImageRecognition.shared.predictUsingCoreML(image: img){
+//                        self.extractedFrameImageView.image = infos.0
+//                        self.resultLabel.text = infos.1
+//                    }else{
+//                        self.extractedFrameImageView.image = nil
+//                        self.resultLabel.text = ""
+//                    }
                     
-                    /*
+                    
                     img.detector.crop(type: DetectionType.face) { result in
                         DispatchQueue.main.async { [weak self] in
                             switch result {
@@ -85,7 +85,7 @@ class CameraViewController: UIViewController {
                             }
                         }
                     }
-                     */
+                     
                     
                 }
             }
